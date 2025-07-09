@@ -24,7 +24,7 @@ def index(request):
     }
     return render(request, 'todo/index.html', context)
 
-def detail(request):
+def detail(request, task_id):
     try:
         task =Task.object.get(pk='task_id')
     except Task.DoseNotExist:
