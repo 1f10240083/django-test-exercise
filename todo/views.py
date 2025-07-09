@@ -4,6 +4,8 @@ from django.utils.dateparse import parse_datetime
 from todo.models import Task
 
 # Create your views here.
+
+
 def index(request):
     if request.method == 'POST':
         task = Task(title=request.POST['title'], due_at=make_aware(parse_datetime(request.POST['due_at'])))
@@ -17,6 +19,7 @@ def index(request):
     tasks = Task.objects.all()
 
     context = {
-        'tasks' : tasks
+        'tasks': tasks
     }
-    return render (request, 'todo/index.html', context)
+    return render(request, 'todo/index.html', context)
+    
