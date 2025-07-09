@@ -27,7 +27,7 @@ def index(request):
 def detail(request, task_id):
     try:
         task =Task.object.get(pk='task_id')
-    except Task.DoseNotExist:
+    except Task.DoesNotExist:
         raise Http404("Task does not exist")
 
     context = {
